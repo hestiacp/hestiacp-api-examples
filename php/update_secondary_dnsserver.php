@@ -183,3 +183,6 @@ $cfg_file = '/etc/bind/named.conf.local';
 // Update the config file, FYI, Bind may need to be restarted after
 UpdateBindConfigFile($cfg_file);
 
+// Tested on a 2 doller per month IONOS VM running Ubuntu with bind9, php-cli, php-curl installed
+// akutra.tm@leapmaker.com for more information
+
