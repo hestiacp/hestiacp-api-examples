@@ -107,16 +107,17 @@ function GetHSUsers()
     // get all the users
     $reqvars = array(
         'cmd' => 'v-list-sys-users',
-        'arg1' => 'json' // use config
+        'arg1' => 'plain' // use plain for simplicity
     );
 
     // request the user list
-    $users = sanitizeBadJson(APIReq($reqvars));
+    $users = APIReq($reqvars);
 
     $data = "";
     if(!empty($users)) {
-        // Parse JSON output
-        $data = json_decode($users, true);
+        // Parse output
+        // New line delimited list, use array filter to purge empty values.
+        $data = array_filter(explode("\x0A", $users));
     }
 
     return $data;
@@ -127,6 +128,7 @@ function sanitizeBadJson($json)
     $minified = preg_replace('/\s+/', '',$json);
     
     // The ending comma causes json decode to fail so fix that.
+    // Hestia versions prior to commit 77e69939c ("Replace bin/v-list-sys-users by bin/v-list-users (#3930)", 2023-08-16)
     if(str_ends_with($minified,",]")) {
         return substr($minified, 0, -2)."]";
     }
