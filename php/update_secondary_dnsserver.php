@@ -143,7 +143,7 @@ function APIReq($callreqvars)
     $std_reqvars = array(
         'user' => $config['server']['username'],
         'password' => $config['server']['pwd'],
-        'returncode' => $config['server']['returncode']
+        'returncode' => 'no'
     );
     $postreqvars = array_merge( $callreqvars, $std_reqvars );
 
@@ -174,8 +174,7 @@ $config = array(
         'host' => 'server.hestiacp.com',
         'port' => '8083',
         'username' => 'admin',
-        'pwd' => 'p4ssw0rd',
-        'returncode' => 'no'
+        'pwd' => 'p4ssw0rd'
     ),
     'primary' => 'ns1.hestiacp.com' // this is the primary server to use for this secondary server
 );
