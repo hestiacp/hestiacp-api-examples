@@ -20,11 +20,9 @@ $postvars = array(
     'cmd' => $hst_command,
     'arg1' => $user,
     'arg2' => $domain
-    'arg2' => $domain_idn
-    'arg4' => $account
-    'arg5' => $password
-    'arg6' => $HIDE // 4
-    'arg7' +> $quota // {5-unlimited}
+    'arg3' => $account
+    'arg4' => $password
+    'arg5' +> $quota // {5-unlimited}
 );
 
 // Send POST query via cURL
