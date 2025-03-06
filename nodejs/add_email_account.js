@@ -22,11 +22,9 @@ const data_json = {
 'cmd': hst_command,
 'arg1': user,
 'arg2': domain,
-'arg2': domain_idn,
 'arg3': account,
 'arg4': password,
-'arg5': HIDE, // 4
-'arg6': $quota // {5-unlimited}
+'arg5': $quota // {5-unlimited}
 }
 
 const data = querystring.stringify(data_json)
