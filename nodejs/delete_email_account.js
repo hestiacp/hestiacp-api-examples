@@ -22,7 +22,6 @@ const data_json = {
 'cmd': hst_command,
 'arg1': user,
 'arg2': domain,
-'arg2': domain_idn,
 'arg3': account
 }
 
