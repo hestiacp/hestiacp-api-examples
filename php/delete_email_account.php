@@ -19,7 +19,7 @@ $postvars = array(
     'returncode' => $hst_returncode,
     'cmd' => $hst_command,
     'arg1' => $user,
-    'arg2' => $domain
+    'arg2' => $domain,
     'arg3' => $account
 );
 
